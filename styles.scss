@@ -1,0 +1,250 @@
+$font-family: 'DM Sans', sans-serif;
+$background-color: #ffffff;
+$primary-text-color: #000743;
+$accent-color: #ff3366;
+$accent-hover-color: #d22450;
+$box-shadow-light: rgba(0, 68, 255, 0.08);
+$box-shadow-hover: rgba(0, 68, 255, 0.15);
+$button-shadow: rgba(0, 0, 0, 0.25);
+$banner-gradient: linear-gradient(to bottom right, rgba(255, 89, 252, 1), rgba(107, 16, 101, 1));
+$overlay-gradient: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+$cta-banner-color: rgba(168, 109, 183, 1);
+$cta-banner-hover: #8e55e6;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin: 12rem 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-auto-rows: 110px;
+  justify-content: center;
+  gap: 20px;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, 100px);
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(2, 90px);
+    grid-auto-rows: 90px;
+  }
+}
+
+figure.icon-box {
+  width: 100%;
+  height: 100%;
+  background: $background-color;
+  border-radius: 12px;
+  box-shadow: 0 10px 16px $box-shadow-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 48px $box-shadow-hover;
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    max-width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+}
+
+.center-content {
+  text-align: center;
+  padding: 1rem;
+
+  h1 {
+    font-size: 3.2rem;
+    color: $primary-text-color;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $primary-text-color;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.cta-button {
+  background-color: $accent-color;
+  color: white;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 4px $button-shadow;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: $accent-hover-color;
+    transform: translateY(-2px);
+
+    i {
+      font-size: 1rem;
+      transform: translateX(5px);
+    }
+  }
+
+  i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 80px;
+  height: 520px;
+  color: white;
+  background: $banner-gradient;
+  overflow: hidden;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $overlay-gradient;
+  z-index: 0;
+}
+
+.banner-content {
+  position: absolute;
+  top: 20%;
+  left: 80px;
+  max-width: 600px;
+  z-index: 2;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 40px;
+  }
+}
+
+.single-line {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: $cta-banner-color;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $cta-banner-hover;
+  }
+}
+
+.tablet-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.pattern {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+
+  &.pattern1 {
+    bottom: -8px;
+    right: -16px;
+    width: 100%;
+  }
+
+  &.pattern2 {
+    bottom: -8px;
+    right: -16px;
+    width: 320px;
+  }
+
+  &.pattern3 {
+    top: 0;
+    right: 166px;
+    width: 720px;
+  }
+}

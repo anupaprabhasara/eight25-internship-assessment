@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin: 12rem 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-auto-rows: 110px;
+  justify-content: center;
+  gap: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 100px);
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 90px);
+    grid-auto-rows: 90px;
+  }
+}
+
+figure.icon-box {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 16px rgba(0, 68, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
+}
+figure.icon-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 48px rgba(0, 68, 255, 0.15);
+}
+figure.icon-box:hover img {
+  transform: scale(1.1);
+}
+figure.icon-box img {
+  max-width: 60%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.center-content {
+  text-align: center;
+  padding: 1rem;
+}
+.center-content h1 {
+  font-size: 3.2rem;
+  color: #000743;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 1024px) {
+  .center-content h1 {
+    font-size: 2.2rem;
+  }
+}
+.center-content p {
+  font-size: 1.25rem;
+  color: #000743;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+@media screen and (max-width: 1024px) {
+  .center-content p {
+    font-size: 1rem;
+  }
+}
+
+.cta-button {
+  background-color: #ff3366;
+  color: white;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #d22450;
+  transform: translateY(-2px);
+}
+.cta-button:hover i {
+  font-size: 1rem;
+  transform: translateX(5px);
+}
+.cta-button i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 80px;
+  height: 520px;
+  color: white;
+  background: linear-gradient(to bottom right, rgb(255, 89, 252), rgb(107, 16, 101));
+  overflow: hidden;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  z-index: 0;
+}
+
+.banner-content {
+  position: absolute;
+  top: 20%;
+  left: 80px;
+  max-width: 600px;
+  z-index: 2;
+}
+.banner-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.single-line {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(168, 109, 183);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.cta-btn:hover {
+  background-color: #8e55e6;
+}
+
+.tablet-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.pattern {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.pattern.pattern1 {
+  bottom: -8px;
+  right: -16px;
+  width: 100%;
+}
+.pattern.pattern2 {
+  bottom: -8px;
+  right: -16px;
+  width: 320px;
+}
+.pattern.pattern3 {
+  top: 0;
+  right: 166px;
+  width: 720px;
+}
+
+/*# sourceMappingURL=styles.css.map */
